@@ -2,12 +2,13 @@
 
 import React, { ChangeEvent, FormEvent, useState } from "react";
 import { addTodo } from "../api";
+import { v4 as uuidv4 } from "uuid";
 
 const AddTask = () => {
   const [taskTittle, setTaskTittle] = useState("");
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
-    await addTodo({ id: "4", text: taskTittle });
+    await addTodo({ id: uuidv4(), text: taskTittle });
     setTaskTittle("");
   };
   return (
