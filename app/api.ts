@@ -23,8 +23,8 @@ export const addTodo = async (todo: Task): Promise<Task> => {
 };
 
 export const editTodo = async (id: string, newText: string): Promise<Task> => {
-  const res = await fetch(`http://localhost:3001/todos/$(id)`, {
-    method: "POST",
+  const res = await fetch(`http://localhost:3001/todos/${id}`, {
+    method: "PUT",
     headers: {
       "Content-Type": "application/json",
     },
